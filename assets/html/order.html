@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- lang är attribut -->
+<!-- OBS: går att sätta språk för ett stycke om man vill -->
+
+<head>
+	<meta charset="UTF-8" /> <!-- charset är attribut -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<title>Order - Sourdough & stuff</title>
+	<link rel="icon" href="../img/top left logo design/favicon/favicon.ico">
+	<link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.css">
+	<meta name="Description" content="Contact information and order form to inquire about a custom order">
+</head>
+
+<body>
+	<!-- Här kommer sajtens innehåll-->
+	<div id="wrapper">
+		<header>
+
+      <h1>
+        <a href="../../index.html">
+          <img src="../img/top left logo design/png/logo-no-background.png"
+            alt="Sourdough & stuff - some sourdough but mostly stuff" />
+        </a>
+      </h1>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="recipeIndex.html">Recipes</a></li>
+          <li><a href="tips.html">Tips</a></li>
+          <li><a href="order.html" class="active">Order</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+		<main>
+			<section class="order">
+				
+					<h2>Order from Me</h2>
+					<h3>Price List</h3>
+
+					<table>
+						<caption></caption>
+						<thead>
+							<tr>
+								<th id="Item" class="rounded-corners">Item</th>
+								<th id="Description">Description</th>
+								<th id="Price" class="rounded-corners">Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td headers="Item">Sourdough bread</td>
+								<td headers="Description">My simple white sourdough loaf, 500 g flour</td>
+								<td headers="Price" class="right">80 kr</td>
+							</tr>
+							<tr>
+								<td headers="Item">Whole grain sourdough</td>
+								<td headers="Description">A mix of whole grain and white flour. The exact types of whole grains varies. Please advise of any allergies.
+								</td>
+								<td headers="Price" class="right">90 kr</td>
+							</tr>
+							<tr>
+								<td headers="Item">Cake</td>
+								<td headers="Description">Cakes can be customized to your liking, and this is the starting price for 3 layers of cake with two layers of filling and a simple decor. Price may increase depending on your choice of fillings, frosting and decoration. </td>
+								<td headers="Price" class="right">100 kr/serving</td>
+							</tr>
+						</tbody>
+						
+					</table>
+
+					<p>Fill in the form and I will be in contact with you </p>
+					<p>Fields marked with an asterisk (*) must be filled in.  </p>
+				
+
+				<!--egentligen borde en server anropas som i sin tur anropar thanks.html men i vårt ex går vi direkt till thanks-->
+				<fieldset>
+					<legend>About you:</legend>
+				<form action="thanks.html" method="post" class="order-form">
+					<p>
+						<label for="FirstName">First Name*:</label>
+						<!--input kopplas till label om dess id är samma som for-->
+						<input type="text" id="FirstName" name="firstname" size="20" maxlength="30" required>
+					</p>
+					<p>
+						<label for="LastName">Last Name*:</label>
+						<input type="text" id="LastName" name="lastname" size="20" maxlength="30" required>
+					</p>
+					<p>
+						<label for="Email">Email*:</label>
+						<input type="email" id="Email" name="email" size="20" maxlength="30" required pattern="\w+^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+					</p> <!--OBS regex kanske inte inkluderar alla adresser...-->
+					<p>
+						<label for="Phone">Phone:</label>
+						<input type="tel" id="Phone" name="phone" pattern="[0-9]{3}-[0-9]{7}">
+					</p> <!--OBS svenskt telnr regex-->
+				</fieldset>
+				<fieldset>
+					<legend>About your order</legend>
+					<p>
+						<label for="Date">Date you want your order*:</label>
+						<input type="date" id="Date" name="date" required>
+					</p>
+					<p>
+						<label for="Product">Product:</label>
+						<select  id="Product" name="product">
+							<option value="white sourdough bread">White sourdough bread</option>
+							<option value="Whole grain mix sourdough bread">Whole grain mix sourdough bread</option>
+							<option value="Cake">Cake</option>
+							<option value="Other">Other</option>
+						</select>
+					</p>
+					<p>
+						<label for="Quantity">Quantity:</label>
+						<select  id="Quantity" name="quantity">
+							<option value="one">1</option>
+							<option value="two">2</option>
+							<option value="three">3</option>
+							<option value="four">4</option>
+							<option value="five">5</option>
+							<option value="six">6</option>
+						</select>
+					</p>
+					<p>
+						<label for="Comments">Comments:</label>
+						<textarea id="Comments" name="comments" rows="5" cols="30"></textarea>
+					</p>
+					<p class="submit">
+						<input type="submit" name="submit" id="Submit" value="Submit your order request">
+						<input type="reset" value="Clear the form">
+					</p>
+					</fieldset>
+				</form>
+
+			</section>
+		</main>
+
+		<footer>
+			<p>Adress 17166 Baking road, Solna. </p>
+			<p>Phone (888) 555-5555</p>
+			<p>Email info@sourdoughandstuff,com</p>
+		</footer>
+
+		<div id="copyright">
+			<ul>
+				<li>&copy; Sourdough & stuff</li><!--@copy; = copyright-symbol-->
+				<li>Design: HTML5 UP</li>
+			</ul>
+		</div><!-- end copyright -->
+
+	</div><!-- end wrapper -->
+
+</body>
+
+</html>

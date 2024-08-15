@@ -1,0 +1,22 @@
+{
+  "recipeTitle":"Test Recipe",
+  "description":"I need to test!",
+  "ingredients":[
+    {"name": "pigs",
+    "amount": 375,
+    "unit": "g"},
+    {"name": "sugar",
+    "amount": 200,
+    "unit": "g" },
+    {"name": "test",
+    "amount": 100}
+  ],
+  "instructions":[
+"Grease and line a 27x8x8cm bread pan",
+"Set the oven to 175&#176;C.",
+"Mix the dry ingredients in a bowl and set aside."
+  ],
+"tags": ["dessert", "test"],
+"imgRelPath": "../img/recipes/desserts/moussePig2_20220824_230842.jpg"
+  
+}

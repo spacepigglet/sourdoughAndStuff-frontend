@@ -1,0 +1,36 @@
+{
+  "recipeTitle":"Lemon curd",
+  "description":"Cakes can get quite sweet and I use sour citrus to cut through that sweetness. I developed this recipe specifically for using as a filling in cakes, and that's why this lemon curd will be a bit more stable than your usual lemon curd. <br> Cakes can also be very filling as heavy whipping cream and butter contains a lot of fat. To help balance the flavours in a cake that will have other fat-heavy components (like mousses or buttercream), I make my lemon curd with a little less fat than your standard lemon curd. Less butter also maintains the acidity of the lemons as more butter will mellow the acidity, which when combined with other cake components creates a balanced cake. That said, if you want a more mellow lemon curd and a more buttery mouth-feel go ahead and add some extra butter.",
+  "ingredients":[
+    {"name": "gelatin sheet",
+    "amount": 1},
+    {"name": "lemon zest",
+    "amount": 2,
+    "unit": "tbsp" },
+    {"name": "lemon juice",
+    "amount": 1,
+    "unit": "dl" },
+    {"name": "egg",
+    "amount": 1},
+    {"name": "egg yolks",
+    "amount": 2},
+    {"name": "caster sugar",
+    "amount": 2,
+    "unit": "dl" },
+    {"name": "cold butter",
+    "amount": 70,
+    "unit": "g" }
+  ],
+  "instructions":[
+"Cut the butter into small cubes and refrigerate.",
+"Put the gelatin sheet in cold water",
+"Mix all ingredients except for butter and gelatin in a metal bowl and put over slighly simmering water. Constantly stir the mixture and sides of the bowl, using a spatula, until the mixture thickens. This happens at around 72&#176;C. Do not let the temperature surpass 80&#176;C or you will end up with scrambeled eggs. Be careful not to introduce too much air into the mixture.",
+"Strain the mixture into another bowl",
+"Add the gelatin and stir to incorporate",
+"Add the butter a little at a time and stir to incorporate.",
+"Cover the lemon curd with plastic wrap, touching the surface, and let cool."
+  ],
+"tags": ["dessert", "lemoncurd", "lemon", "lemon curd"],
+"imgRelPath": "../img/recipes/desserts/lemoncurd-612x612.jpg"
+  
+}
