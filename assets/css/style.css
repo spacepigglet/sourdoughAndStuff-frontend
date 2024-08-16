@@ -470,11 +470,11 @@ textarea:focus {
   background-color:  var(--primary-light);
 
 }
-/*
+
 .order-form label, table {
 
-  font-size: 1.2rem;
-}*/
+  font-size: 1.3rem;
+}
 
 /*form*/
 /*.order-form {
@@ -635,11 +635,16 @@ tr:nth-of-type(odd) {
 
   /*form*/
   .order-form {
-    width: 30rem;
+    width: 40rem;
     margin: 1rem auto 0;
     
   }
 
+  /*
+  .fieldset{
+    width:fit-content
+  }
+*/
   .order-form label {
     width: 8rem;
     float: left;
