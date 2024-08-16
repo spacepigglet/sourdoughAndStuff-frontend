@@ -147,7 +147,7 @@ function addBreadcrumb(name, category) {
 // Save breadcrumb trail to localStorage
 function saveBreadcrumbs() {
   const breadcrumbs = Array.from(breadcrumbElem.children)
-      .filter(item => item.tagName === 'A')
+      
       .map(item => ({
           name: item.textContent,
           category: item.dataset.category
@@ -206,11 +206,33 @@ async function navigateToCategory(category) {
 // Function to clear the breadcrumb trail after a certain point
 function clearBreadcrumbAfter(category) {
   const breadcrumbs = Array.from(breadcrumbElem.children);
-  const index = breadcrumbs.findIndex(item => item.firstElementChild.dataset.category === category);
+  const index = breadcrumbs.findIndex(item => item.firstElementChild && item.firstElementChild.dataset.category === category);
 
+  // Always keep "All recipes"
+  const allRecipesBreadcrumb = breadcrumbs.find(item => item.firstElementChild && item.firstElementChild.dataset.category === 'all-recipes');
+  
+  // Clear all breadcrumbs after the specified category
   if (index !== -1) {
-    breadcrumbElem.innerHTML = '';
-      breadcrumbs.slice(0, index + 1).forEach(item => breadcrumbElem.appendChild(item));
+      const itemsToKeep = breadcrumbs.slice(0, index + 1);
+      breadcrumbElem.innerHTML = ''; // Clear all breadcrumbs
+
+      // Ensure "All recipes" is always the first breadcrumb
+      if (allRecipesBreadcrumb) {
+          breadcrumbElem.appendChild(allRecipesBreadcrumb);
+      }
+
+      itemsToKeep.forEach(item => {
+          if (item !== allRecipesBreadcrumb) { // Avoid appending "All recipes" twice
+              breadcrumbElem.appendChild(item);
+          }
+      });
+  } else {
+      // If category is not found, reset breadcrumbs to just "All recipes"
+      breadcrumbElem.innerHTML = ''; 
+      if (allRecipesBreadcrumb) {
+          breadcrumbElem.appendChild(allRecipesBreadcrumb);
+      }
   }
+
   saveBreadcrumbs();  // Save state
 }
