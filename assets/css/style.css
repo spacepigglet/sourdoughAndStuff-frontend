@@ -170,7 +170,7 @@ img {
 
 /*tips*/
 .tips article img {
-  max-width: 500px;
+  /*max-width: 500px;*/
   float: left;
   margin-right: 1rem;
   
@@ -184,7 +184,7 @@ img {
 
 .tips article {
   background-color: var(--primary-light);
-  padding: 0 1rem;
+  padding: 1rem;
   border: var(--accent-light-pink) solid;
   border-radius: 1rem;
 
@@ -321,20 +321,28 @@ margin: 0 auto;
 
 header img {
   max-width: 400px;
+  width:auto;
 
 }
 
 /*recipe template*/
-#recipe{
-
+.recipe-template{
   margin: 0 auto;
   max-width: 800px;
-    
+}
+
+.recipe-img{
+  text-align: center;
+  width: auto;
 }
 
 
 
 /*about*/
+
+#story{
+  display:inline-block;
+}
 #story img {
   
   float: left;
