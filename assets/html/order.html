@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- lang är attribut -->
-<!-- OBS: går att sätta språk för ett stycke om man vill -->
+<html lang="en"> 
 
 <head>
-	<meta charset="UTF-8" /> <!-- charset är attribut -->
+	<meta charset="UTF-8" /> 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 	<title>Order - Sourdough & stuff</title>
 	<link rel="icon" href="../img/top left logo design/favicon/favicon.ico">
@@ -13,8 +12,8 @@
 </head>
 
 <body>
-	<!-- Här kommer sajtens innehåll-->
-	<div id="wrapper">
+	
+	<div id="container">
 		<header>
 
       <h1>
@@ -71,12 +70,12 @@
 						
 					</table>
 
-					<p>Fill in the form and I will be in contact with you </p>
-					<p>Fields marked with an asterisk (*) must be filled in.  </p>
-				
+					<h3>Order form</h3>
 
-				<!--egentligen borde en server anropas som i sin tur anropar thanks.html men i vårt ex går vi direkt till thanks-->
-				
+					<p>Fill in the form and I will be in contact with you.</p>
+					<p>Fields marked with an asterisk (*) must be filled in.  </p>
+			
+				<!--egentligen borde en server anropas som i sin tur anropar thanks.html men vi hoppar direkt till thanks... -->
 				<form action="thanks.html" method="post" class="order-form">
 					<fieldset>
 					<legend>About you:</legend>
@@ -109,7 +108,7 @@
 						<label for="Product">Product:</label>
 						<select  id="Product" name="product">
 							<option value="white sourdough bread">White sourdough bread</option>
-							<option value="Whole grain mix sourdough bread">Whole grain mix sourdough bread</option>
+							<option value="Whole grain sourdough bread">Whole grain sourdough bread</option>
 							<option value="Cake">Cake</option>
 							<option value="Other">Other</option>
 						</select>
