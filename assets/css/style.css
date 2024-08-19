@@ -224,8 +224,11 @@ img {
   padding: 1rem 0;
 }
 
+
+
 .search-input-button{
   display: flex;
+  
 }
 
 #query {
@@ -234,8 +237,10 @@ img {
   border-radius: 1.5rem;
   border: none;
   background-color: var(--accent-light-pink);
-  flex:1;
-  min-width: 0
+  /*flex:1;*/
+  min-width: 0;
+  
+  
 }
 
 
@@ -449,6 +454,12 @@ select,
 textarea {
   border: 1px solid var(--primary-green);
   font-size: 1.2rem;
+  min-width: 0;
+}
+
+.order select {
+  min-width:0;
+  text-overflow: hidden;
 }
 
 input[type="submit"],
@@ -502,6 +513,9 @@ tbody tr:nth-of-type(odd) {
     padding: 0.2rem 0.3rem 0.1rem 0.3rem;
   }
 
+  #query{
+    width:14.5rem;
+  }
   
   
   
@@ -548,7 +562,8 @@ tbody tr:nth-of-type(odd) {
   }*/
   .order select{
     display : block;
-    width : 100%
+    width : 100%;
+    min-width:0;
    }
   /*does nothing*/
  /* .search-input-button{
