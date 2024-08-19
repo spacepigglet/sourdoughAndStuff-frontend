@@ -2,14 +2,13 @@ import {getAllRecipeCardData, getAllRecipeCardDataWithTag} from "./fetchRecipes.
 //import { addBreadcrumb, restoreBreadcrumbs, saveBreadcrumbs, clearBreadcrumbAfter } from "./breadcrumb.js";
 const jsonAllRecipesData = await getAllRecipeCardData()
 window.onload = restoreBreadcrumbs;
-/*const url = new URL(location.href)
-const search = url.searchParams.get('searchQuery')
-*/
-/*const storageSearch = localStorage.getItem('searchQuery')*/
+const url = new URL(location.href)
+//const search = url.searchParams.get('searchQuery')
 
+/*const storageSearch = localStorage.getItem('searchQuery')*/
+const searchQuery =url.searchParams.get('searchQuery')
 const queryInput = document.getElementById("query")
 console.dir(queryInput)
-const recipeWidget = document.getElementById("#recipe-widget")
 
 const cards = document.querySelector(".cards")
 //query.addEventListener('input', searchHandler)
@@ -17,12 +16,12 @@ const cards = document.querySelector(".cards")
 const form = document.getElementById('search-form')
 const breadcrumbElem = document.querySelector('.breadcrumb-nav>ul')
 
-
+searchHandler(searchQuery)
 
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const searchQuery = queryInput.value.trim()
+  searchQuery = queryInput.value.trim()
   searchHandler(searchQuery)
   
 })
