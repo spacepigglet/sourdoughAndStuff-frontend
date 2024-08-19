@@ -26,8 +26,8 @@ html {
 
 html, body{
   min-height: 100%;
+  line-height: 1.5rem;
 }
-
 
 body {
   font: 300 1rem/1.375 Arial, serif;
@@ -46,7 +46,13 @@ body {
 }
 
 p {
-  margin-bottom: 1rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+header img {
+  max-width: 400px;
+  width:100%
+
 }
 
 main {
@@ -56,12 +62,9 @@ main {
 }
 
 section {
-  padding: 1rem;
+  padding: 1rem 0;
 
 }
-
-/*Nav*/
-
 
 h1 {
   margin: 0.5rem;
@@ -69,21 +72,29 @@ h1 {
 
 h2 {
 
-  font: 500 2rem/2.375 "Capriola", Arial, serif;
+  font: 500 2rem "Capriola", Arial, serif;
+  margin-bottom: 0.5rem;
   /*[font style] [font variance] font weight font size/line height font family*/
 
+}
+
+
+.card h2{
+  margin: 0
 }
 
 h3,
 #search-form {
   
   font: 500 1.5rem "Capriola", Arial, serif;
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
+  margin-top: 0.5rem;
   /*/1.775*/
   /*[font style] [font variance] font weight font size/line height font family*/
 
 }
 
+/*Nav*/
 header{
   background-color: var(--accent-beige);
   border-bottom: solid var(--accent-light-pink);
@@ -99,7 +110,6 @@ nav ul {
   text-transform: uppercase;
   display: flex;
   flex-direction: row;
-  padding-bottom: 0.6rem;
   list-style: none;
   /*font-size: 0.85rem;
     font-weight: 800;*/
@@ -145,54 +155,23 @@ a:focus {
 
 ul {
   list-style: disc;
-  list-style-position: inside;
+  padding-left: 1rem;
 
 }
 
 ol {
   list-style: decimal;
-  list-style-position: inside;
+  padding-left: 1rem;
 
+}
+
+ol li{
+  line-height: 1.5rem;
 }
 
 img {
   border: 0;
 }
-
-
-
-/*
-img {
-  width: 500px; 
-  height: 400px; 
-  object-fit: cover;
-}*/
-
-/*tips*/
-.tips article img {
-  /*max-width: 500px;*/
-  float: left;
-  margin-right: 1rem;
-  
-}
-
-.tips {
-  display: grid;
-  gap: 1rem;
-  
-}
-
-.tips article {
-  background-color: var(--primary-light);
-  padding: 1rem;
-  border: var(--accent-light-pink) solid;
-  border-radius: 1rem;
-
-}
-
-/*end tips*/
-
-
 
 /*recipes search*/
 
@@ -203,7 +182,7 @@ img {
 
 #search-form {
   color: var(--primary-green);
-  display: block;
+  display: inline-block;
 
 
 }
@@ -225,22 +204,14 @@ img {
   
   border-radius: 2rem;
   background-color: var(--primary-green);
-  outline: 0;
-
-  padding-top: 0.4rem;
+  
   width: 1.8em;
   height: 1.8em;
   vertical-align: -0.125em;
   
   fill:#fff;
- /*
-    width: 2rem;
-    height: 2rem;
-    border: 0px;
-  cursor: pointer;*/
+
 }
-
-
 
 .search-button:hover, input[type="submit"]:hover, input[type="reset"]:hover{
   background: var(--primary-dark);
@@ -255,11 +226,14 @@ img {
   border-radius: 1.5rem;
   border: none;
   background-color: var(--accent-light-pink);
+  
 }
 
-.search-container{
-
+.search-input-button{
+  display: inline-flex;
 }
+
+/*search end*/
 
 /*recipe cards*/
 .recipes{
@@ -275,7 +249,7 @@ margin: 0 auto;
 }
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   margin: 0 auto;
   gap: 1rem;
   padding: 0;
@@ -319,11 +293,7 @@ margin: 0 auto;
 
 /*recipe cards end*/
 
-header img {
-  max-width: 400px;
-  width:auto;
 
-}
 
 /*recipe template*/
 .recipe-template{
@@ -337,18 +307,33 @@ header img {
 }
 
 
+/*tips*/
+.tips {
+  display: grid;
+  gap: 1rem;
+}
+
+.tips article {
+  background-color: var(--primary-light);
+  padding: 1rem;
+  border: var(--accent-light-pink) solid;
+  border-radius: 1rem;
+}
 
 /*about*/
 
-#story{
+#story, .tips article{
   display:inline-block;
 }
-#story img {
+
+#story img, .tips article img {
   
   float: left;
   margin-right: 1rem;
   max-width: 50%;
 }
+
+/*end tips*/
 
 /*end about*/
 
@@ -448,17 +433,14 @@ legend {
   border-radius: 1rem;
   padding: 0.3rem 1rem 0.3rem 1rem;
   color: #fff;
-}
-
-input[type=radio] {
-  accent-color: var(--primary-green);
+   
 }
 
 input,
 select,
 textarea {
   border: 1px solid var(--primary-green);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 input[type="submit"],
@@ -466,8 +448,9 @@ input[type="reset"] {
   background-color: var(--primary-green);
   color: white;
   border: none;
-  border-radius: 1.3rem;
+  border-radius: 1.2rem;
   padding: 0.5rem 0.8rem;
+  font-size: 1.125rem;
   /*margin-left: 8rem;*/
 }
 
@@ -476,12 +459,14 @@ select:focus,
 textarea:focus {
   outline: none;
   background-color:  var(--primary-light);
-
 }
 
 .order-form label, table {
 
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+}
+.order-form p{
+  display: block;
 }
 
 /*form*/
@@ -503,29 +488,82 @@ tbody tr:nth-of-type(odd) {
 }
 
 
+@media(max-width:350px){
 
-/*
-table {
-  background-color: var(--accent-beige);
-  border-radius: 1rem;
-  border-collapse:separate;
-  border:solid black 1px;
  
-}*/
+  .main-nav ul{
+    
+  }
+
+  .main-nav ul li a{
+    padding: 0.2rem 0.3rem 0.1rem 0.3rem;
+  }
+
+  .search-input-button{
+    margin: 0 auto;
+    width:100%;
+  }
+
+  #query {
+   size: 20rem;
+    
+  }
+  
+  
+}
+
+@media(min-width:351px){
+
+  .main-nav ul{
+    padding-bottom: 0.6rem;
+  }
+  .main-nav ul li a {
+    padding: 0.3rem 1rem 0.6rem 1rem;
+  }
+  
+  /*
+  input,
+  select,
+  textarea {
+    
+   width: 100%; 
+   
+  }*/
+  
+  
+  
+}
+
+@media(max-width:450px){
+  
+  #story img, .tips article img {
+  padding: 1rem 0;
+    max-width: 100%;
+  }
+
+  .order-form{
+   width: 100%;
+  }
+  /* does nothing
+  .order-form {
+    
+    margin: 1rem auto 0;
+   max-width: 100%;
+    
+  }*/
+  .order select{
+    display : block;
+    width : 100%
+   }
+  /*does nothing*/
+ /* .search-input-button{
+    width: auto;
+  }*/
+}
 
 
-/*
-thead {
-  background-color: var(--primary-green);
-  color: #fff;
-}*/
-/*
-tr:nth-of-type(odd) {
-  background-color: #eeddda;
-}*/
-/*table*/
 
-@media(max-width:640px){
+@media(max-width:647px){
 
   main{
     padding: 1rem 1rem;
@@ -576,20 +614,12 @@ tr:nth-of-type(odd) {
   }
 
   /*FORM media query*/
-  label {
+  .order-form label {
     width: 100%;
-    /*change*/
     text-align: left;
-    /*change*/
     display: block;
-    /*new*/
   }
-  /*
-  .order-form {
-    width: fit-content;
-    margin: 1rem auto 0;
-    
-  }*/
+  
 
   textarea {
     width: 15rem;
@@ -602,28 +632,17 @@ tr:nth-of-type(odd) {
 
 }
 
-@media(min-width:641px){
+@media(min-width:647px){
   main{
     padding: 1rem 2rem;
   }
   /*table*/
-/*
-  table.rounded-corners {
-    border: 1px solid var(--primary-green);
-    border-radius: 1rem;
-    border-spacing: 0;
-  border-collapse: separate;
-  }
-  
-  table.rounded-corners th, table.rounded-corners td {
-    border: 1px solid var(--primary-green);
-  }*/
   table {
     border-spacing: 0;
     border-collapse: separate;
     /*border-collapse: collapse;*/
     width: auto;
-    font-size: 1.2rem;
+    /*font-size: 1.2rem;*/
     /*display: flex;*/
     justify-content: center;
     border: 2px solid var(--primary-green);
@@ -644,37 +663,47 @@ tr:nth-of-type(odd) {
 
   /*form*/
   .order-form {
-    width: 40rem;
+    max-width: 40rem;
     margin: 1rem auto 0;
     
+    
   }
+  .order-form label {
+    width: 8rem;
+    float: left;
+    text-align: right;
+    margin-right: 0.6rem;
+    
+  }
+  .order-form p{
+    display: inline-block;
+
+  }
+
+ .submit{
+  display: inline-flex;
+  justify-content: center;
+
+}
+
+  
 
   /*
   .fieldset{
     width:fit-content
   }
 */
-  .order-form label {
-    width: 8rem;
-    float: left;
-    text-align: right;
-    margin-right: 0.6rem;
-    font-size: 1.2rem;
-  }
+  
 }
 
 
 @media(max-width:762px){
   h1{
-   
+   margin-bottom: 1.5rem;
   }
   header {
     display: flex;
-    /*justify-content: center;*/
-    flex-direction: column;
-    /*justify-content: space-evenly;*/
-    /*border: solid var(--primary-dark);*/
-    
+    flex-direction: column;    
     
   }
   .main-nav ul{
@@ -683,6 +712,8 @@ tr:nth-of-type(odd) {
 }
 
 @media(min-width:762px){
+  
+
   header {
     display: flex;
     /*justify-content: center;*/
@@ -692,6 +723,7 @@ tr:nth-of-type(odd) {
     justify-content: space-between;
     align-items: end;
     
+    
   }
 
   nav ul {
@@ -699,6 +731,21 @@ tr:nth-of-type(odd) {
     
   }
 }
+
+@media (max-width: 944px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(320, 1fr));
+    
+  }
+  
+  .card {
+    
+    max-width: 320px;
+    
+  }
+  
+}
+
 
 @media(min-width:1024px) {
   main{
