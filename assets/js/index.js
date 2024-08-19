@@ -1,11 +1,10 @@
 import {getAllRecipeCardData, getAllRecipeCardDataWithTag} from "./fetchRecipes.js"
-//import { addBreadcrumb, restoreBreadcrumbs, saveBreadcrumbs, clearBreadcrumbAfter } from "./breadcrumb.js";
+
 const jsonAllRecipesData = await getAllRecipeCardData()
-window.onload = restoreBreadcrumbs;
+
 const url = new URL(location.href)
 //const search = url.searchParams.get('searchQuery')
 
-/*const storageSearch = localStorage.getItem('searchQuery')*/
 const searchQuery =url.searchParams.get('searchQuery')
 const queryInput = document.getElementById("query")
 console.dir(queryInput)
@@ -14,7 +13,6 @@ const cards = document.querySelector(".cards")
 //query.addEventListener('input', searchHandler)
 
 const form = document.getElementById('search-form')
-const breadcrumbElem = document.querySelector('.breadcrumb-nav>ul')
 
 searchHandler(searchQuery)
 
@@ -58,10 +56,7 @@ async function filterRecipes(searchQuery) {
   const searchResult = await getAllRecipeCardDataWithTag(searchQuery)
     fillRecipeCards(searchResult)
   
-  // Add search term to breadcrumbs
-  clearBreadcrumbAfter('all-recipes');
-  addBreadcrumb(searchQuery, `search-${searchQuery}`);
-  //saveBreadcrumbs();  
+
 }
 
 
@@ -120,118 +115,3 @@ async function cardClickHandler(event){
   window.location.href = "../html/recipeTemplate.html";
   
 }*/
-
-function addBreadcrumb(name, category) {
-  const breadcrumbItem = document.createElement('li');
-  const link = document.createElement('a');
-  link.href = "#";
-  link.textContent = name;
-  link.dataset.category = category;
-
-  link.addEventListener('click', (event) => {
-      event.preventDefault();
-      navigateToCategory(category);
-  });
-
-  /*
-  if (breadcrumbElem.children.length > 0) {
-      breadcrumbElem.innerHTML += " > ";
-  }*/
-
-  breadcrumbItem.appendChild(link);
-  breadcrumbElem.appendChild(breadcrumbItem);
-  saveBreadcrumbs();  // Save breadcrumb state
-}
-
-// Save breadcrumb trail to localStorage
-function saveBreadcrumbs() {
-  const breadcrumbs = Array.from(breadcrumbElem.children)
-      
-      .map(item => ({
-          name: item.textContent,
-          category: item.dataset.category
-      }));
-  localStorage.setItem('breadcrumbs', JSON.stringify(breadcrumbs));
-}
-/*
-export function saveBreadcrumbs(breadcrumbElem) {
-  const breadcrumbs = Array.from(breadcrumbElem.children).map(item => ({
-      name: item.textContent,
-      category: item.dataset.category
-  }));
-  localStorage.setItem('breadcrumbs', JSON.stringify(breadcrumbs));
-}*/
-
-// Restore breadcrumb trail from localStorage
-function restoreBreadcrumbs() {
-  const savedBreadcrumbs = JSON.parse(localStorage.getItem('breadcrumbs') || '[]');
-  breadcrumbElem.innerHTML = ''; // Clear existing breadcrumbs
-
-  if (savedBreadcrumbs.length === 0) {
-    // If no breadcrumbs are saved, show "All Recipes" by default
-    navigateToCategory('all-recipes');
-} else {
-  //breadcrumbElem.innerHTML = '';
-  savedBreadcrumbs.forEach(crumb => {
-    addBreadcrumb(crumb.name, crumb.category);
-
-    // If the last breadcrumb is a search term, filter the recipes
-    if (crumb.category.startsWith('search-')) {
-        const searchTerm = crumb.category.replace('search-', '');
-        filterRecipes(searchTerm);
-    } else if (crumb.category === 'all-recipes') {
-        navigateToCategory('all-recipes');
-    }
-  })
-}
-}
-
-
-// Function to navigate to a category (based on breadcrumb click)
-async function navigateToCategory(category) {
-  if (category.startsWith('search-')) {
-    const searchTerm = category.replace('search-', '');
-    filterRecipes(searchTerm);
-} else if (category === 'all-recipes') {
-    // Reset to all recipes view
-    fillRecipeCards(jsonAllRecipesData)
-    clearBreadcrumbAfter('all-recipes');
-}
-
-  console.log("Navigating to:", category);
-  
-}
-
-// Function to clear the breadcrumb trail after a certain point
-function clearBreadcrumbAfter(category) {
-  const breadcrumbs = Array.from(breadcrumbElem.children);
-  const index = breadcrumbs.findIndex(item => item.firstElementChild && item.firstElementChild.dataset.category === category);
-
-  // Always keep "All recipes"
-  const allRecipesBreadcrumb = breadcrumbs.find(item => item.firstElementChild && item.firstElementChild.dataset.category === 'all-recipes');
-  
-  // Clear all breadcrumbs after the specified category
-  if (index !== -1) {
-      const itemsToKeep = breadcrumbs.slice(0, index + 1);
-      breadcrumbElem.innerHTML = ''; // Clear all breadcrumbs
-
-      // Ensure "All recipes" is always the first breadcrumb
-      if (allRecipesBreadcrumb) {
-          breadcrumbElem.appendChild(allRecipesBreadcrumb);
-      }
-
-      itemsToKeep.forEach(item => {
-          if (item !== allRecipesBreadcrumb) { // Avoid appending "All recipes" twice
-              breadcrumbElem.appendChild(item);
-          }
-      });
-  } else {
-      // If category is not found, reset breadcrumbs to just "All recipes"
-      breadcrumbElem.innerHTML = ''; 
-      if (allRecipesBreadcrumb) {
-          breadcrumbElem.appendChild(allRecipesBreadcrumb);
-      }
-  }
-
-  saveBreadcrumbs();  // Save state
-}
