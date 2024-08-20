@@ -1,11 +1,14 @@
 import {getRecipe} from './fetchRecipes.js'
+import { createBreadcrumb } from './breadcrumb.js'
 
 const url = new URL(location.href)
 const recipeId = url.searchParams.get('recipeId')
+const searchQuery = url.searchParams.get('searchQuery')
 
 const recipeTemplate = document.querySelector('.recipe-template')
 console.dir(recipeTemplate)
 const recipeDiv = document.getElementById('recipe')
+const breadcrumb = document.querySelector('.breadcrumb-nav')
 
 
 fillRecipe(recipeId)
@@ -55,5 +58,11 @@ async function fillRecipe(recipeId){
 
   recipeDiv.replaceChildren(recipe)
 
+  fillBreadcrumb(recipeData.recipeTitle)
+}
+
+function fillBreadcrumb(recipeName){
+  const ul = createBreadcrumb(searchQuery=searchQuery, recipeName)
+  breadcrumb.replaceChildren(ul)
 }
 

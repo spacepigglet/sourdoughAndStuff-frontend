@@ -10,9 +10,8 @@
 
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <script src="../js/index.js" type="module"></script>
+  <script src="../js/recipeIndex.js" type="module"></script>
 </head>
 
 <body>
@@ -41,28 +40,32 @@
 
     <main>
       <div class="recipes">
-      <div class="search-container">
-        <form role="search" id="search-form">
-          <label for="query">Search:</label>
-          <div class="search-input-button">
-          <input type="search" id="query" name="Query" placeholder="recipes">
-          <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+        <div class="search-container">
+          <form role="search" id="search-form">
+            <label for="query">Search:</label>
+            <div class="search-input-button">
+              <input type="search" id="query" name="Query" placeholder="recipes">
+              <button type="submit" class="search-button"><svg xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                  <path
+                    d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                </svg></button>
+            </div>
+          </form>
+
         </div>
-        </form>
 
+        <nav class="breadcrumb-nav">
+          <ul>
+            <li><a href="recipeIndex.html">All Recipes</a></li>
+          </ul>
+
+        </nav>
+
+        <div id="recipes" class="cards">
+          <!-- my recipe-cards widget -->
+        </div>
       </div>
-
-      <nav class="breadcrumb-nav">
-        <ul>
-          <li><a href="recipeIndex.html">All Recipes</a></li>
-        </ul>
-        
-      </nav>
-
-      <div id="recipes" class="cards">
-        <!-- my recipe-cards widget -->
-      </div>
-    </div>
     </main>
 
 

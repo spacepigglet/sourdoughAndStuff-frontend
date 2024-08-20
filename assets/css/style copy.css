@@ -21,7 +21,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 105%;
 }
 
 html, body{
@@ -195,10 +195,6 @@ img {
   background-color: var(--accent-beige);
 }
 
-#search-form input:focus {
-  background-color: var(--primary-light);
-}
-
 /* Style the submit button */
 .search-button {
   font-weight: 400;
@@ -228,6 +224,8 @@ img {
   padding: 1rem 0;
 }
 
+
+
 .search-input-button{
   display: inline-flex;
   
@@ -239,6 +237,9 @@ img {
   border-radius: 1.5rem;
   border: none;
   background-color: var(--accent-light-pink);
+  /*flex:1;*/
+  min-width: 0;
+  
   
 }
 
@@ -351,6 +352,16 @@ margin: 0 auto;
 
 #index {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 0rem;
+  row-gap: 0px;
+}
+
+
+
+#index {
+  display: grid;
   gap: 1rem;
   padding: 0;
   grid-auto-rows: minmax(150px, auto);
@@ -443,6 +454,12 @@ select,
 textarea {
   border: 1px solid var(--primary-green);
   font-size: 1.2rem;
+  min-width: 0;
+}
+
+.order select {
+  min-width:0;
+  text-overflow: hidden;
 }
 
 input[type="submit"],
@@ -465,7 +482,7 @@ textarea:focus {
 
 .order-form label, table {
 
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .order-form p{
   display: block;
@@ -494,7 +511,13 @@ tbody tr:nth-of-type(odd) {
 
   .main-nav ul li a{
     padding: 0.2rem 0.3rem 0.1rem 0.3rem;
-  } 
+  }
+
+  #query{
+    width:14rem;
+  }
+  
+  
   
 }
 
@@ -520,35 +543,18 @@ tbody tr:nth-of-type(odd) {
   
 }
 
-@media(max-width:500px){
+@media(max-width:450px){
 
   h2{
-    font-size: 1.7rem;
+    font-size:1.5rem;
   }
   h3{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   
   #story img, .tips article img {
   padding: 1rem 0;
     max-width: 100%;
-  }
-
-  /*FORM media query*/
-  .order-form label {
-    width: 100%;
-    text-align: left;
-    display: block;
-  }
-  
-
-  textarea {
-    width: 15rem;
-  }
-
-  input[type="submit"]
-   {
-    margin-bottom: 0.5rem;
   }
 
   .order-form{
@@ -563,7 +569,8 @@ tbody tr:nth-of-type(odd) {
   }*/
   .order select{
     display : block;
-    width : 100%
+    width : 100%;
+    min-width:0;
    }
   /*does nothing*/
  /* .search-input-button{
@@ -576,35 +583,8 @@ tbody tr:nth-of-type(odd) {
   }
 */
  
-
 }
 
-@media(min-width:500px){
-    /*form*/
-    .order-form {
-      max-width: 40rem;
-      margin: 1rem auto 0;
-      
-      
-    }
-    .order-form label {
-      width: 8rem;
-      float: left;
-      text-align: right;
-      margin-right: 0.6rem;
-      
-    }
-    .order-form p{
-      display: inline-block;
-  
-    }
-  
-   .submit{
-    display: inline-flex;
-    justify-content: center;
-  
-  }
-}
 
 
 @media(max-width:647px){
@@ -657,6 +637,22 @@ tbody tr:nth-of-type(odd) {
     content: "Price";
   }
 
+  /*FORM media query*/
+  .order-form label {
+    width: 100%;
+    text-align: left;
+    display: block;
+  }
+  
+
+  textarea {
+    width: 15rem;
+  }
+
+  input[type="submit"]
+   {
+    margin-bottom: 0.5rem;
+  }
 
 }
 
@@ -688,6 +684,39 @@ tbody tr:nth-of-type(odd) {
     color:#fff;
     font-size: 1.3rem;
   }
+
+  /*form*/
+  .order-form {
+    max-width: 40rem;
+    margin: 1rem auto 0;
+    
+    
+  }
+  .order-form label {
+    width: 8rem;
+    float: left;
+    text-align: right;
+    margin-right: 0.6rem;
+    
+  }
+  .order-form p{
+    display: inline-block;
+
+  }
+
+ .submit{
+  display: inline-flex;
+  justify-content: center;
+
+}
+
+  
+
+  /*
+  .fieldset{
+    width:fit-content
+  }
+*/
   
 }
 

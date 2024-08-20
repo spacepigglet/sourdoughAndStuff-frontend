@@ -38,7 +38,7 @@ function extractRecipeCardData(jsonData){
 	return jsonData.map((recipe) => ({
 		id: recipe._id,
     recipeTitle: recipe.recipeTitle,
-    thumbnailRelPath: recipe.thumbnailImgRelPath ?? 'https://baconmockup.com/300/200',
+    thumbnailRelPath: recipe.thumbnailImgRelPath ?? 'https://st2.depositphotos.com/2586633/46477/v/450/depositphotos_464771766-stock-illustration-no-photo-or-blank-image.jpg',
 		imgAlt: recipe.imgAlt
   }))
 }

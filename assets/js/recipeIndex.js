@@ -1,11 +1,12 @@
 import {getAllRecipeCardData, getAllRecipeCardDataWithTag} from "./fetchRecipes.js"
+import { createBreadcrumb } from './breadcrumb.js'
 
 const jsonAllRecipesData = await getAllRecipeCardData()
 
 const url = new URL(location.href)
 //const search = url.searchParams.get('searchQuery')
 
-const searchQuery =url.searchParams.get('searchQuery')
+let searchQuery =url.searchParams.get('searchQuery')
 const queryInput = document.getElementById("query")
 console.dir(queryInput)
 
@@ -14,7 +15,14 @@ const cards = document.querySelector(".cards")
 
 const form = document.getElementById('search-form')
 
-searchHandler(searchQuery)
+const breadcrumb = document.querySelector('.breadcrumb-nav')
+
+if(searchQuery){
+  searchHandler(searchQuery)
+}else {
+  fillRecipeCards(jsonAllRecipesData)
+}
+
 
 
 form.addEventListener('submit', async (e) => {
@@ -62,7 +70,7 @@ async function filterRecipes(searchQuery) {
 
 
 
-fillRecipeCards(jsonAllRecipesData)
+
 
 async function fillRecipeCards(jsonRecipesData){
   
@@ -71,8 +79,11 @@ async function fillRecipeCards(jsonRecipesData){
 
   const newCards = jsonRecipesData.map((recipe) => {
     
-    let a = document.createElement('a')
+    const a = document.createElement('a')
     a.href = `../html/recipeTemplate.html?recipeId=${recipe.id}`
+    if(searchQuery){
+      a.href += `?searchQuery={searchQuery}`
+    }
     const newCard = document.createElement('div')
     newCard.id = recipe.id;
     newCard.classList.add('card')
@@ -94,7 +105,14 @@ async function fillRecipeCards(jsonRecipesData){
   })
   cards.replaceChildren(...newCards)
   
+  if(searchQuery){
+    const ul = createBreadcrumb(searchQuery, undefined)
+    breadcrumb.replaceChildren(ul)
+  }
+  
 }
+
+
 
 /*
 async function searchHandler(event){
