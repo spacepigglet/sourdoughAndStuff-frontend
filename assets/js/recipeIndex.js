@@ -16,6 +16,7 @@ const cards = document.querySelector(".cards")
 const form = document.getElementById('search-form')
 
 const breadcrumb = document.querySelector('.breadcrumb-nav')
+const oops = document.getElementById('oops')
 
 if(searchQuery){
   searchHandler(searchQuery)
@@ -73,6 +74,12 @@ async function filterRecipes(searchQuery) {
 
 
 async function fillRecipeCards(jsonRecipesData){
+  if(jsonRecipesData.length == 0){
+    console.log("jsonRecipesData")
+    console.dir(jsonRecipesData)
+    oops.style.display = 'block'
+    return;
+  }
   
   console.dir(jsonRecipesData)
   cards.innerHTML = ''
