@@ -78,6 +78,10 @@ h2 {
 
 }
 
+strong{
+  font-weight: bold;
+}
+
 
 .card h2{
   margin: 0
@@ -242,9 +246,6 @@ img {
   
 }
 
-
-
-
 /*search end*/
 
 /*recipe cards*/
@@ -253,7 +254,6 @@ img {
   text-align: center;
   display: block;
   display:none;
-  
 }
 
 .recipes{
@@ -357,79 +357,192 @@ margin: 0 auto;
 
 /*end about*/
 
+/*
 #index {
   display: grid;
   gap: 1rem;
   padding: 0;
   grid-auto-rows: minmax(150px, auto);
-}
+ 
+}*/
+
+
+
+
+
 /*
-#index{
-  grid-template-rows: 1fr 1fr;
+#sourdoughLink, #dessertLink, #foodLink{
+  width:100%;
+  height: auto;
+  background-size: cover;
+  
+}*/
+/*
+#sourdoughLink, #dessertLink, #foodLink{
+  
+  background-size: auto;
+  background-position: 100% 10%;
+  background-repeat: no-repeat;
+  color:white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font: 500 2.5rem Alata, Arial, sans-serif;
+  
+}*/
+/*
+#grid{
+  /*
+grid-template-rows: 1fr 1fr;
 grid-template-columns: 1fr 1fr;
 display: grid;
+gap:1rem;
 max-width: 100%;
+
 }*/
-
-#index img {
-
-  /*max-width: 500px;
-    max-height:300px;*/
-    /*
-  object-fit: cover;
-  display: block;*/
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-
-
+#grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+  grid-template-rows: auto; /* Row height will be determined by the height of the first image */
+  gap: 1rem; /* Adjust the gap between grid items as needed */
 }
 
-/*
-#foodLink img {
-  min-width: 1000px;
-  max-height:200px;
-}*/
-
-.main-img {
-  position: relative;
+#sourdough-div,
+#dessert-div {
+  grid-column: span 1;
 }
 
-
-.main-img::before {
-  content: "Text";
-  text-align: center;
+#food-div {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
   
-  color: #fff;
+}
+
+#food-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crop the image to fit the container */
+
+}
+
+.item {
+  position: relative;
+  height: 100%;
+}
+
+.item img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
   display: block;
+  object-fit: cover;
+}
+
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  /* Change the color and opacity as needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
+
+
+
+
+/*
+.item{
+  width:100%;
+  height:100vh;
+  display:block;
+  position: relative;
+}
+.item img{
+  width:100%;
+  height:auto;
+  display: block;
+ 
+  
+}
+.item p{
+  margin:0;
+  padding: 0 1rem;
+  text-align: center;
+  font: 500 1.2rem Alata, Arial, sans-serif;
+  
+}
+.overlay{
+  text-align: center;
+  justify-content: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  top: 0;
+  height:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#sourdough-div {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+#dessert-div {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+#food-div{
+  grid-row: 2/3;
+  grid-column: 1/3;
+  
+}
+.item::before{
+  background-color: #0008;
+ 
+}
+*/
+
 
 /*
 
 #sourdoughLink {
+  background: linear-gradient(to right, #0008, #0008), url("../img/recipes/bread/sourdough_bunny_resize.jpg");
+  
+
   grid-row: 1/2;
-  gridrow start/end
   grid-column: 1/2;
 }
 
 #dessertLink {
+  background: linear-gradient(to right, #0008, #0008), url("../img/recipes/desserts/blueberry_tarte_20210810_172229_resize.jpg");
+
+
   grid-row: 1/2;
   grid-column: 2/3;
 }
-*/
+
 #foodLink {
+
+  background: linear-gradient(to right, #0008, #0008), url("../img/recipes/food/gyoza_rotated_20221118_152509_resize.jpg");
+  
+  
+  grid-row: 2/3;
+  grid-column: 1/3;
+
   grid-column-start: span 2;
-  /*grid-row: 2/3;
-  grid-column: 1/3;*/
   object-fit: cover;
 }
+*/
+
 
 /*form*/
 /*

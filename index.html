@@ -1,65 +1,80 @@
 <!DOCTYPE html>
 <html lang="en" class="surf">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-    <title>Sourdough & Stuff</title>  
-     
-    <link rel="icon" href="assets/img/top left logo design/favicon/favicon.ico">
-    <script src="assets/js/html-templates.js" type="module"></script>
-    <link rel="stylesheet" href="assets/css/reset.css"> 
-    <link rel="stylesheet" href="assets/css/style.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+  <title>Sourdough & Stuff</title>
 
-  <body>
+  <link rel="icon" href="assets/img/top left logo design/favicon/favicon.ico">
+  <script src="assets/js/html-templates.js" type="module"></script>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-    <div id="container">
-      <header>
-        
-        <h1>
-          <a href="index.html">
-            <img src="assets/img/top left logo design/png/logo-no-background.png" alt="Sourdough & stuff - some sourdough but mostly stuff" />
-          </a>
-        </h1>
+<body>
 
-        <nav class="main-nav">
-          <ul>
-            <li><a href="assets/html/recipeIndex.html">Recipes</a></li>
-            <li><a href="assets/html/tips.html">Tips</a></li>
-            <li><a href="assets/html/order.html">Order</a></li>
-            <li><a href="assets/html/about.html">About</a></li>
-          </ul>
-        </nav>
-        
-      </header>
+  <div id="container">
+    <header>
 
-      <!-- ../html/recipeTemplate.html?recipeId= -->
-      
-      <main id="index">  
+      <h1>
+        <a href="index.html">
+          <img src="assets/img/top left logo design/png/logo-no-background.png"
+            alt="Sourdough & stuff - some sourdough but mostly stuff" />
+        </a>
+      </h1>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="assets/html/recipeIndex.html">Recipes</a></li>
+          <li><a href="assets/html/tips.html">Tips</a></li>
+          <li><a href="assets/html/order.html">Order</a></li>
+          <li><a href="assets/html/about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <main id="grid">
+      <div id="sourdough-div" class="item">
         <a href="assets/html/recipeIndex.html?searchQuery=sourdough" id="sourdoughLink" class="main-img">
-          <img src="assets/img/recipes/bread/sourdough_bunny_resize.jpg" alt="Sourdough slice in the shape of a bunny. Click to go to sourdough recipes." 
-          /> <!--width="850" height="478"-->
+          <img src="assets/img/recipes/bread/sourdough_bunny_resize.jpg"
+            alt="Sourdough slice in the shape of a bunny. Click to go to sourdough recipes." />
+          <!--width="850" height="478"-->
+          <div class="overlay">
+            <p>Sourdough</p>
+          </div>
         </a>
-
+      </div>
+      <div id="dessert-div" class="item">
         <a href="assets/html/recipeIndex.html?searchQuery=dessert" id="dessertLink" class="main-img">
-          <img src="assets/img/recipes/desserts/blueberry_tarte_20210810_172229_resize.jpg" alt="Blueberry tarte. Click to go to dessert recipes." 
-          />
+          <img src="assets/img/recipes/desserts/blueberry_tarte_20210810_172229_resize.jpg"
+            alt="Blueberry tarte. Click to go to dessert recipes." />
+          <div class="overlay">
+            <p>Desserts</p>
+          </div>
         </a>
+      </div>
 
+      <div id="food-div" class="item">
         <a href="assets/html/recipeIndex.html?searchQuery=food" id="foodLink" class="main-img">
-          <img src="assets/img/recipes/food/gyoza_rotated_20221118_152509_resize.jpg" alt="Sourdough & stuff - some sourdough but mostly stuff" 
-          /> <!--width="4032" height="2268"-->
+          <img src="assets/img/recipes/food/gyoza_rotated_20221118_152509_resize.jpg"
+            alt="Gyoza. Click to see food recipes." /> <!--width="4032" height="2268"-->
+          <div class="overlay">
+            <p>Food</p>
+          </div>
         </a>
-      </main>
+      </div>
+    </main>
 
- 
 
-      <footer>
-        <p>&copy; Sourdough and stuff, 2024.</p>
-      
-      </footer>
-        
-    </div><!-- end of container -->
-  </body>
+
+    <footer>
+      <p>&copy; Sourdough and stuff, 2024.</p>
+
+    </footer>
+
+  </div><!-- end of container -->
+</body>
+
 </html>
