@@ -219,7 +219,7 @@ img {
   text-align: center;
   user-select: none;
  
-  padding: 0.1rem 0.5rem;
+  padding: 0.5rem;
   font-size: 1.5rem;
   
   border-radius: 2rem;
@@ -233,7 +233,7 @@ img {
 
 }
 
-.search-button:hover, input[type="submit"]:hover, input[type="reset"]:hover{
+.search-button:hover, .search-button:focus, input[type="submit"]:hover, input[type="submit"]:focus, input[type="reset"]:hover, input[type="reset"]:focus{
   background: var(--primary-dark);
 }
 .breadcrumb-nav{
@@ -581,6 +581,14 @@ table{
 }
 tbody tr:nth-of-type(odd) {
   background-color: var(--primary-light);
+}
+
+footer{
+  display: block;
+  text-align: center;
+  background-color: var(--accent-light-pink);
+  color: ver(--primary-dark);
+  padding: 3rem 1rem;
 }
 
 

@@ -78,7 +78,8 @@ async function fillRecipeCards(jsonRecipesData){
     console.log("jsonRecipesData")
     console.dir(jsonRecipesData)
     oops.style.display = 'block'
-    return;
+  } else{
+    oops.style.display = 'none'
   }
   
   console.dir(jsonRecipesData)
