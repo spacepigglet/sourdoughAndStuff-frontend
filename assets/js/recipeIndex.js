@@ -44,52 +44,27 @@ if(search){
   getAllRecipeCardData()
 }
 */
+// Function to filter and display recipes based on search term
 async function searchHandler(searchQuery){
   if(searchQuery){
-    filterRecipes(searchQuery)
-    
-    /*
-    url.searchParams.set("searchQuery", searchQuery)
-    
-    localStorage.setItem("searchQuery", searchQuery)
     const searchResult = await getAllRecipeCardDataWithTag(searchQuery)
     fillRecipeCards(searchResult)
-    const li = document.createElement('li')
-    let a = document.createElement('a')
-    a.href = `../html/recipeIndex.html?searchQuery=${searchQuery}`
-    a.innerText = searchQuery
-    li.appendChild(a)
-    
-    breadcrumb.appendChild(li)
-    queryInput.value = ''*/
   }
 }
-
-// Function to filter and display recipes based on search term
-async function filterRecipes(searchQuery) {
-
-  const searchResult = await getAllRecipeCardDataWithTag(searchQuery)
-    fillRecipeCards(searchResult)
-  
-
-}
-
-
-
-
-
 
 async function fillRecipeCards(jsonRecipesData){
   if(jsonRecipesData.length == 0){
     console.log("jsonRecipesData")
     console.dir(jsonRecipesData)
+    cards.innerHTML = ''
     oops.style.display = 'block'
+    return;
   } else{
     oops.style.display = 'none'
   }
   
   console.dir(jsonRecipesData)
-  cards.innerHTML = ''
+  
 
   const newCards = jsonRecipesData.map((recipe) => {
     
@@ -97,7 +72,6 @@ async function fillRecipeCards(jsonRecipesData){
     a.href = `../html/recipeTemplate.html?recipeId=${recipe.id}`
     if(searchQuery){
       a.href += `&searchQuery=${searchQuery}`
-      console.dir(a)
     }
     const newCard = document.createElement('div')
     newCard.id = recipe.id;
