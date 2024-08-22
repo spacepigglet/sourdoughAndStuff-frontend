@@ -18,8 +18,12 @@ const form = document.getElementById('search-form')
 const breadcrumb = document.querySelector('.breadcrumb-nav')
 const oops = document.getElementById('oops')
 
+
+createBreadcrumb(breadcrumb, searchQuery, undefined)
+
 if(searchQuery){
   searchHandler(searchQuery)
+  
 }else {
   fillRecipeCards(jsonAllRecipesData)
 }
@@ -30,6 +34,7 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
   searchQuery = queryInput.value.trim()
   searchHandler(searchQuery)
+  createBreadcrumb(breadcrumb, searchQuery, undefined)
   
 })
 /*
@@ -42,6 +47,7 @@ if(search){
 async function searchHandler(searchQuery){
   if(searchQuery){
     filterRecipes(searchQuery)
+    
     /*
     url.searchParams.set("searchQuery", searchQuery)
     
@@ -90,7 +96,8 @@ async function fillRecipeCards(jsonRecipesData){
     const a = document.createElement('a')
     a.href = `../html/recipeTemplate.html?recipeId=${recipe.id}`
     if(searchQuery){
-      a.href += `?searchQuery={searchQuery}`
+      a.href += `&searchQuery=${searchQuery}`
+      console.dir(a)
     }
     const newCard = document.createElement('div')
     newCard.id = recipe.id;
@@ -113,10 +120,6 @@ async function fillRecipeCards(jsonRecipesData){
   })
   cards.replaceChildren(...newCards)
   
-  if(searchQuery){
-    const ul = createBreadcrumb(searchQuery, undefined)
-    breadcrumb.replaceChildren(ul)
-  }
   
 }
 

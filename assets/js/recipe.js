@@ -10,7 +10,6 @@ console.dir(recipeTemplate)
 const recipeDiv = document.getElementById('recipe')
 const breadcrumb = document.querySelector('.breadcrumb-nav')
 
-
 fillRecipe(recipeId)
 
 
@@ -58,11 +57,9 @@ async function fillRecipe(recipeId){
 
   recipeDiv.replaceChildren(recipe)
 
-  fillBreadcrumb(recipeData.recipeTitle)
+  // create breadcrumb nav
+  createBreadcrumb(breadcrumb, searchQuery, recipeData.recipeTitle)
 }
 
-function fillBreadcrumb(recipeName){
-  const ul = createBreadcrumb(searchQuery=searchQuery, recipeName)
-  breadcrumb.replaceChildren(ul)
-}
+
 

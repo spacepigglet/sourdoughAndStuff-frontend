@@ -269,12 +269,17 @@ margin: 0 auto;
 }
 
 .card>h2 {
-
   margin: 1rem 0;
   font-size: 1.8rem;
   line-height: 2rem;
-
 }
+
+
+:is(.card, .tips article):hover:focus:focus-visible{
+  border: var(--primary-dark) solid 2px;
+  border-radius: 1rem;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));

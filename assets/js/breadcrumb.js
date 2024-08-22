@@ -1,24 +1,29 @@
+/*const url = new URL(location.href)
+let searchQuery =url.searchParams.get('searchQuery')
+let recipeName =url.searchParams.get('recipeName')
+*/
 
-export function createBreadcrumb(searchQuery, recipeName){
-  const breadcrumb = document.createElement('ul')
+
+export function createBreadcrumb(breadcrumb, searchQuery, recipeName){
+  const breadcrumbUl = document.createElement('ul')
   const allRecipesUrl = '../html/recipeIndex.html'
   searchQuery = searchQuery || undefined
   recipeName = recipeName || undefined;
 
   const allRecipesLi = makeLi(allRecipesUrl, 'All recipes')
-  breadcrumb.appendChild(allRecipesLi)
+  breadcrumbUl.appendChild(allRecipesLi)
 
   if(searchQuery){
     const queryLi = makeLi(`${allRecipesUrl}?searchQuery=${searchQuery}`, searchQuery)
-    breadcrumb.appendChild(queryLi)
+    breadcrumbUl.appendChild(queryLi)
   }
 
   if(recipeName){
     const recipeLi = makeLi('#', recipeName)
-    breadcrumb.appendChild(recipeLi)
+    breadcrumbUl.appendChild(recipeLi)
   }
   
-  return breadcrumb
+  breadcrumb.replaceChildren(breadcrumbUl)
 }
 
 function makeLi(url, innertext){
