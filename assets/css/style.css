@@ -588,11 +588,24 @@ tbody tr:nth-of-type(odd) {
   background-color: var(--primary-light);
 }
 
+#thanks{
+  text-align: center;
+}
+/*thanks*/
+#thanks img{
+ max-width:max-content;
+width: 100%;
+margin: 1.5rem auto;
+
+}
+
+/*end thanks*/
+
 footer{
   display: block;
   text-align: center;
   background-color: var(--accent-light-pink);
-  color: ver(--primary-dark);
+  color: var(--primary-dark);
   padding: 2rem 1rem;
 }
 
