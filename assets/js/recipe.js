@@ -28,9 +28,13 @@ async function fillRecipe(recipeId){
 
   //image
   
-  const img = recipe.querySelector('img')
-  img.setAttribute('src', recipeData.imgRelPath)
-  img.setAttribute('alt', recipeData.imgAlt)
+  
+  if(recipeData.imgRelPath){
+    const img = recipe.querySelector('img')
+    img.setAttribute('src', recipeData.imgRelPath)
+    img.setAttribute('alt', recipeData.imgAlt)
+  }
+  
   
   //ingredients
   const ingredientsList = recipe.querySelector('.ingredients-list')

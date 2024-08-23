@@ -73,9 +73,9 @@ async function fillRecipeCards(jsonRecipesData){
     if(searchQuery){
       a.href += `&searchQuery=${searchQuery}`
     }
-    const newCard = document.createElement('div')
-    newCard.id = recipe.id;
-    newCard.classList.add('card')
+
+    a.classList.add('card')
+    a.id = recipe.id;
 
     const heading = document.createElement('h2')
     heading.innerText = recipe.recipeTitle
@@ -85,11 +85,10 @@ async function fillRecipeCards(jsonRecipesData){
     thumbnail.classList.add('thumbnail')
     thumbnail.setAttribute('alt', recipe.imgAlt)
 
-    newCard.appendChild(heading)
-    newCard.appendChild(thumbnail)
-    a.appendChild(newCard)
+    a.appendChild(heading)
+    a.appendChild(thumbnail)
     //newCard.addEventListener('click', cardClickHandler)
-    console.dir(newCard)
+    console.dir(a)
     return a
   })
   cards.replaceChildren(...newCards)
@@ -97,7 +96,37 @@ async function fillRecipeCards(jsonRecipesData){
   
 }
 
+/*
+const newCards = jsonRecipesData.map((recipe) => {
+    
+    const a = document.createElement('a')
+    a.href = `../html/recipeTemplate.html?recipeId=${recipe.id}`
+    if(searchQuery){
+      a.href += `&searchQuery=${searchQuery}`
+    }
+    const newCard = document.createElement('div')
+    newCard.id = recipe.id;
+    newCard.classList.add('card')
 
+    const newCardContent = document.createElement('div')
+    newCardContent.classList.add('card-content')
+
+    const heading = document.createElement('h2')
+    heading.innerText = recipe.recipeTitle
+
+    const thumbnail = document.createElement('img')
+    thumbnail.setAttribute('src', recipe.thumbnailRelPath)
+    thumbnail.classList.add('thumbnail')
+    thumbnail.setAttribute('alt', recipe.imgAlt)
+
+    newCardContent.appendChild(heading)
+    newCardContent.appendChild(thumbnail)
+    a.appendChild(newCardContent)
+    newCard.appendChild(a)
+    //newCard.addEventListener('click', cardClickHandler)
+    console.dir(newCard)
+    return newCard
+  })*/ 
 
 /*
 async function searchHandler(event){

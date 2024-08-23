@@ -1,7 +1,7 @@
 
 /*const url = 'https://f14f567f-6b95-4937-8d8e-eb56ebca532b-00-2xuxw8xz84y4j.spock.replit.dev/api/v1/recipes/';*/
-const url = 'https://f14f567f-6b95-4937-8d8e-eb56ebca532b-00-2xuxw8xz84y4j.spock.replit.dev/api/v1/recipes/'
-/*const url = 'https://sourdoughandstuff-backend.onrender.com/api/v1/recipes/'*/
+
+const url = 'https://sourdoughandstuff-backend.onrender.com/api/v1/recipes/'
 /*const options = {
 	method: 'GET',
 	headers: {

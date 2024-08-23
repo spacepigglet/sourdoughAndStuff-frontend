@@ -5,10 +5,10 @@
 	<meta charset="UTF-8" /> 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 	<title>Order - Sourdough & stuff</title>
-	<link rel="icon" href="../img/top left logo design/favicon/favicon.ico">
+	<link rel="icon" href="../img/logo/favicon/favicon.ico">
 	<link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/style.css">
-	<meta name="Description" content="Contact information and order form to inquire about a custom order">
+	<meta name="Description" content="Contact information and order form to make an order">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
 
       <h1>
         <a href="../../index.html">
-          <img src="../img/top left logo design/png/logo-no-background.png"
+          <img src="../img/logo/png/logo-no-background.png"
             alt="Sourdough & stuff - some sourdough but mostly stuff" />
         </a>
       </h1>
@@ -80,8 +80,8 @@
 					<p>Fill in the form and I will be in contact with you.</p>
 					<p>Fields marked with an asterisk (*) must be filled in. Please enter more details about your order and advise of any allergies in the comments. </p>
 			
-				<!--egentligen borde en server anropas som i sin tur anropar thanks.html men vi hoppar direkt till thanks... -->
-				<form action="thanks.html" method="post" class="order-form">
+				<!--egentligen borde en server anropas som i sin tur anropar thanks.html men vi hoppar direkt till thanks... get används så post ledde till HTTP ERROR 405 -->
+				<form action="thanks.html" method="get" class="order-form">
 					<fieldset>
 					<legend>About you:</legend>
 				
@@ -111,8 +111,9 @@
 						<input type="date" id="Date" name="date" required>
 					</p>
 					<p>
-						<label for="Product">Product:</label>
+						<label for="Product">Product*:</label>
 						<select  id="Product" name="product" required>
+							<option value=''>-</option>
 							<option value="White sourdough bread">White sourdough bread</option>
 							<option value="Whole grain sourdough bread">Whole grain sourdough bread</option>
 							<option value="Cake">Cake</option>
@@ -120,8 +121,9 @@
 						</select>
 					</p>
 					<p>
-						<label for="Quantity">Quantity:</label>
-						<select  id="Quantity" name="quantity">
+						<label for="Quantity">Quantity*:</label>
+						<select  id="Quantity" name="quantity" required>
+							<option value=''>-</option>
 							<option value="one">1</option>
 							<option value="two">2</option>
 							<option value="three">3</option>
