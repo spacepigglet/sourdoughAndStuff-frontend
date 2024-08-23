@@ -349,9 +349,15 @@ input[type="reset"]:focus {
   max-width: 800px;
 }
 
-.recipe-img {
+.recipe-img{
   text-align: center;
-  width: auto;
+}
+.recipe-img img {
+  
+  max-width: 100%;
+}
+#recipe a{
+  text-decoration: underline;
 }
 
 
