@@ -351,10 +351,12 @@ input[type="reset"]:focus {
 
 .recipe-img{
   text-align: center;
+  margin: 1rem;
 }
 .recipe-img img {
   
   max-width: 100%;
+  
 }
 #recipe a{
   text-decoration: underline;
