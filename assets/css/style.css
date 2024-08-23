@@ -64,7 +64,7 @@ a {
   color: var(--primary-green);
   text-decoration: underline;
 }
-.main-nav a, .card {
+nav a, .card {
   text-decoration: none;
 }
 
