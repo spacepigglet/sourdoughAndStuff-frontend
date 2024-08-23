@@ -1,9 +1,3 @@
-/*const url = new URL(location.href)
-let searchQuery =url.searchParams.get('searchQuery')
-let recipeName =url.searchParams.get('recipeName')
-*/
-
-
 export function createBreadcrumb(breadcrumb, searchQuery, recipeName){
   const breadcrumbUl = document.createElement('ul')
   const allRecipesUrl = '../html/recipeIndex.html'
