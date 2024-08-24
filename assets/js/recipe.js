@@ -15,11 +15,14 @@ fillRecipe(recipeId)
 async function fillRecipe(recipeId){
   const recipe = recipeTemplate.cloneNode(true)
   const recipeData = await getRecipe(recipeId)
+
   //title
   const recipeTitle = recipe.querySelector('h2')
   recipeTitle.innerText = recipeData.recipeTitle
+
   //description
-  const description = recipe.querySelector('.recipe-description>p')
+  //OBS: description text in db is already formatted into <p> etc
+  const description = recipe.querySelector('.recipe-description')
   description.innerHTML = recipeData.description
 
   //image
@@ -41,6 +44,7 @@ async function fillRecipe(recipeId){
   ingredientsList.append(...ingredientsLi)
 
   //instructions
+  //OBS: instructions in db are already formatted (eg with links and <strong>)
   const instructionsList = recipe.querySelector('.instructions-steps')
   const instructions = recipeData.instructions
   const instructionsLi = instructions.map((instruction) => {

@@ -13,6 +13,7 @@ export function createBreadcrumb(breadcrumb, searchQuery, recipeName){
   }
 
   if(recipeName){
+    //link is not necessary, as a recipe title will only show up on the breadcrumb navigation while on the recipe page itself
     const recipeLi = makeLi('#', recipeName)
     breadcrumbUl.appendChild(recipeLi)
   }
@@ -20,6 +21,7 @@ export function createBreadcrumb(breadcrumb, searchQuery, recipeName){
   breadcrumb.replaceChildren(breadcrumbUl)
 }
 
+//create a list element containing a link
 function makeLi(url, innertext){
   const a = document.createElement('a')
   a.href = url
