@@ -1,6 +1,6 @@
 {
   "recipeTitle":"Sourdough Banana Bread",
-  "description":"When baking with sourdough you likely produce quite a bit of discard, as your starter quickly grows too big if you don't discard. That doesn't mean you have to throw it away though. If my discard doesn't smell too bad I save it in a jar in the fridge. Cakes get moist and super tasty with added acidity, and usually this comes in the form of greek yoghurt or sourcream, but this recipe has substituted that for sourdough starter. So when the stars align and I have old bananas and I happen to have enough starter discard, I make this banana bread. It's delicious and reduces waste, a win-win situation!",
+  "description":"<p>When baking with sourdough you likely produce quite a bit of discard, as your starter quickly grows too big if you don't discard. That doesn't mean you have to throw it away though. If my discard doesn't smell too bad I save it in a jar in the fridge. Cakes get moist and super tasty with added acidity, and usually this comes in the form of greek yoghurt or sourcream, but this recipe has substituted that for sourdough starter. So when the stars align and I have old bananas and I happen to have enough starter discard, I make this banana bread. It's delicious and reduces waste, a win-win situation!</p>",
   "ingredients":[
     {"name": "bananas",
     "amount": 375,
@@ -40,11 +40,12 @@
 "Whip the butter and sugar in another bowl until light and fluffy.",
 "Add the eggs one at a time while mixing.",
 "Add bananas and mix.",
-"Add the dry ingredients and mix until just mixed in, do <strong>NOT</strong> over-mix.",
+"Add the dry ingredients and mix until just mixed in, do <strong>not</strong> over-mix.",
 "Pour the batter into the prepared pan. Top with a banana halfed by length for decoration if you have extra. Bake for 50-60 min. You may need to add a sheet of aluminum foil to keep the banana bread from getting burnt towards the end of the bake. The cake is ready when a toothpick inserted in the middle comes out clean except for a few moist crumbs.",
 "Let cool before cutting into slices and enjoy!"
   ],
 "tags": ["dessert", "sourdough", "banana", "banana bread", "discard"],
-"imgRelPath": "../img/recipes/desserts/bananaBread.jpg"
-  
+"imgRelPath": "../img/recipes/desserts/bananaBread.jpg",
+"thumbnailImgRelPath": "../img/recipes/thumbnails/desserts/bananaBread.jpg",
+"imgAlt": "Half a banana bread decorated with a half a banana on top."
 }

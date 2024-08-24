@@ -1,6 +1,6 @@
 {
   "recipeTitle":"Swiss Meringue Buttercream",
-  "description":"A Swiss meringue buttercream is a decadent frosting suitable for filling layer cakes, topping cupcakes, and most importantly, tastes great and pipes beautifully. I prefer it to american buttercream because is smoother and less sweet than american buttercream. It also doesn't form a crust after some time like the american one does. Some recipes for swiss meringue buttercream use a 1:2:3 ratio of egg white:sugar:butter, but I find that the meringue gets too heavy with all that sugar and it's too buttery for my liking. Some recipes also have a 1:1 ratio of egg white to sugar, but I find that the meringue is not stable enough. My recipe uses a 2:3:4 ratio of egg white:sugar:butter but still produces a beautiful and stable buttercream. The acid in the lemon juice is to stabilize the meringue, but if a stronger lemon flavour is desired, more can be added in the end. <br> This recipe produces a batch big enough for a dam (a circle around the edge of the cake to hold in other fillings) as well as crumb coat of a 22 cm three layer cake.",
+  "description":"<p>A Swiss meringue buttercream is a decadent frosting suitable for filling layer cakes, topping cupcakes, and most importantly, tastes great and pipes beautifully. I prefer it to american buttercream because is smoother and less sweet than american buttercream. It also doesn't form a crust after some time like the american one does.</p><p>Some recipes for swiss meringue buttercream use a 1:2:3 ratio of egg white:sugar:butter, but I find that the meringue gets too heavy with all that sugar and it's too buttery for my liking. Some recipes also have a 1:1 ratio of egg white to sugar, but I find that to be too little sugar and so the meringue is not stable enough. My recipe uses a 2:3:4 ratio of egg white:sugar:butter but still produces a beautiful and stable buttercream.</p><p>The acid in the lemon juice is there to stabilize the meringue, but if a stronger lemon flavour is desired, more can be added in the end. <br> This recipe produces a batch big enough for a dam (a circle around the edge of the cake to hold in other fillings) as well as crumb coat of a 22 cm three layer cake.</p>",
   "ingredients":[
     {"name": "egg white",
     "amount": 240,
@@ -18,13 +18,14 @@
   ],
   "instructions":[
 "Cut the butter into small cubes/slices and refrigerate.",
-"Put egg whites, sugar and lemon juice into a metal bowl (preferrably a stand mixer bowl) over simmering water. Bring to between 65&#176;C-75&#176;C. I find that a higher temp makes for a more meringue that more easily reaches stiff peaks, but if you're not careful the eggs may cook. Constantly stir the mixture and sides of the bowl, using a spatula, until the desired temperature is reached. The sugar should be dissolved which you can feel with your fingers (be careful not to bur yourself). ",
+"Put egg whites, sugar and lemon juice into a metal bowl (preferrably a stand mixer bowl) over simmering water. Bring to between 65&#176;C-75&#176;C. I find that a higher temp makes for a more meringue that more easily reaches stiff peaks, but if you're not careful the eggs may cook. Constantly stir the mixture and sides of the bowl, using a spatula, until the desired temperature is reached. The sugar should be dissolved which you can feel with your fingers (be careful not to bur yourself).",
 "Once the mixture has reached the desired temperature, immediately take off the heat, dry off the bowl and put it into your stand mixer and whip on medium high until stiff peaks form and the meringue is cool, about 10-20 minutes.",
 "Take the butter out of the fridge while the meringue is whipping. The goal temperature of buttercream is 20&#176;C-23&#176;C, so while the meringue is still slightly warm at 30&#176;C or so, slightly cold butter, about 15&#176;C can be added.",
 "Add the butter a little at a time while mixing. It may start to look like soup, but keep going until all the butter is added. If it is still soupy it is likely too hot. Refrigerate for 15 minutes and then whip again. Repeat if necessary. If the buttercream looks curdeled it is too cold. Put it back over the hot water bath for a few minutes until the edges seem to turn soupy and then return to the mixer. The buttercream is ready when it is smooth and 20-23&#176;C.",
-"Add any flavourings or coloring you desire, but be careful of adding too much liquid as that may break the emulsion. A couple bablespoons of lemon juice may be added for a lemon flavour but for a stronger flavour use a lemon curd."
+"Add any flavourings or coloring you desire, but be careful of adding too much liquid as that may break the emulsion. A couple tablespoons of lemon juice may be added for a lemon flavour but for a stronger flavour use a lemon curd."
   ],
 "tags": ["dessert", "buttercream", "lemon", "swiss", "swiss meringure buttercream"],
-"imgRelPath": "../img/recipes/desserts/winter_cake_20221222_000009.jpg"
-  
+"imgRelPath": "../img/recipes/desserts/winter_cake_20221222_000009.jpg",
+"thumbnailImgRelPath": "../img/recipes/thumbnails/desserts/winter_cake_20221222_000009.jpg",
+"imgAlt": "A white swiss meringue buttercream cake decorated like a wreath with piped buttercream white roses and green and brown pine cones."
 }
